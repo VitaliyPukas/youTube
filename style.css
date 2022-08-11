@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    color: slategray;
+    margin: 10px;
+}
+ul {
+    list-style: none;
+}
+
+
+.conteiner {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar body";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: max-content 1fr;
+    height: 100vh;
+}
+
+/* header */
+
+
+
+.header {
+    grid-area: header;
+    display: flex;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    left: 0; 
+    right: 0;
+    z-index: 1;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+} 
+.header ul {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    width: 25%;
+}
+.header-logo li {
+    display: flex;
+}
+.header-logo i {
+    color: red;
+    font-size: 25px;
+    padding: 0 10px;
+}
+.header-logo span {
+    font-size: 20px;
+    font-weight: 550;
+    letter-spacing: -2px;
+}
+
+.header-search {
+    display: flex;
+    width: 50%;
+}
+.header-search form{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.header-search input{
+    padding: 5px;
+    width: 80%;
+}
+.header-search button{
+    padding: 5px 25px;
+}
+.header-search .mic i {
+padding: 2px 0 0 10px;
+    font-size: 20px;
+}
+
+
+
+.header-ico {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.header-ico i{
+    width: 25%;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.header-ico .prof {
+    font-size: 30px;
+    color: rgb(53, 24, 3);
+}
+
+
+/* sidebar */
+
+.sidebar {
+    grid-area: sidebar;
+    width: 250px;
+    transition: 0.3s ease;
+    height:100vh ;  
+    position: sticky;   
+}
+.sidebar:hover {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+#visible_sidebar {
+    display: none;
+}
+
+#visible_sidebar:checked ~ .sidebar {
+    width: 80px;
+}
+#visible_sidebar:checked ~ .sidebar ul{
+    border: none;
+}
+#visible_sidebar:checked ~ .sidebar .side-ok span {
+    font-size: 14px;
+    margin-left: -10px;
+}
+#visible_sidebar:checked ~ .sidebar .side-ok i {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+   
+}
+
+#visible_sidebar:checked ~ .sidebar .side-non  {
+    display: none;
+}
+
+
+#visible_sidebar ~ .header .header-logo .open-sidebar .img {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
+    margin: 5px 15px 5px 30px;
+}
+.sidebar ul {
+    border-bottom: 1px solid silver; 
+    padding-bottom: 10px;
+}
+.sidebar ul li{
+    padding: 5px 0 5px 30px; 
+}
+.sidebar ul li i{
+   margin-right: 20px;
+   font-size: 20px;
+}
+.sidebar ul li span{
+    font-size: 18px;
+}
+.sidebar li:hover {
+    background-color: rgb(192, 189, 192);
+}
+
+
+
+
+
+/* Video block */
+.video {
+    grid-area: body;
+}
+
+.content-mine-video {
+    width: 98%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.block-video {
+    width: 24%;
+}
+/* .content-mine-video:hover {
+    overflow-y:scroll;
+    height: calc(100vh - 60px) ;
+} */
+
+.block-video .img {
+    background-size: contain;
+}
+.block-video .text {
+    width: 100%;
+    display: flex;
+    
+}
+.block-video .text-logo {
+    width: 20%;
+    height: 40px;
+    background-size: contain;
+}
+.text-logo img {
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.block-video .text-r {
+    margin-left: 5px;
+}
+.block-video .text-mine {
+    width: 80%;
+    height: 40px;
+    font-weight: 600;
+    
+}
+.block-video.text-b ul li{
+    list-style: none;
+    font-weight: 500;
+}
+.block-video .text-b ul li:last-child{
+    margin-bottom: 20px;
+}
